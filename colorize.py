@@ -39,9 +39,9 @@ G = generator()
 
 if args.gpu>=0:
     G=G.cuda(args.gpu)
-    G.load_state_dict(torch.load(args.model))
+    G.load_state_dict(torch.load(args.model,map_location='cuda:0'))
 else:
-    G.load_state_dict(torch.load(args.model,map_location={'cuda:0': 'cpu'}))
+    G.load_state_dict(torch.load(args.model,map_location='cpu'))
 
 def inference(G,in_path,out_path):
     p=Image.open(in_path).convert('RGB')

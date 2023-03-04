@@ -40,7 +40,7 @@ def parse_args():
     parser.add_argument("-b",
                         "--batch_size",
                         type=int,
-                        default=20,
+                        default=2,
                         help="batch size")
     parser.add_argument("-w",
                         "--num_workers",
